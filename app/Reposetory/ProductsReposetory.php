@@ -15,12 +15,12 @@ class ProductsReposetory implements ProductsInterface
         $this->model = $model;
     }
 
-    public function show()
+    public function show(): object
     {
         return $this->model->all();
     }
 
-    public function create(array $data)
+    public function create(array $data): array
     {
         return $this->model->create($data);
     }

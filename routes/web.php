@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('admin','ProductsContrller@main');
+Route::post('createProducts','ProductsContrller@createProducts')->name('create');

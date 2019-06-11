@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Requests\CreateProductsRequest;
 use App\Http\Controllers\Controller;
 use App\Reposetory\ProductsReposetory;
 use App\Products;
@@ -25,11 +26,11 @@ class ProductsContrller extends Controller
         return view('admin')->with('data' ,$all_products);
     }
 
-    public function createProducts(Request $request)
+    public function createProducts(CreateProductsRequest $request)
     {
+        $validated = $request->validated();
         
         
-        
-        return $this->items->create();
+        return $this->items->create($validated);
     }
 }

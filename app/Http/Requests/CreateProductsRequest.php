@@ -24,7 +24,10 @@ class CreateProductsRequest extends FormRequest
     public function rules()
     {
         return [
-            ''
+            'title' => 'required|max:50',
+            'desccription' => 'required',
+            'count' => 'required|integer',
+            'seo_url' => 'required'
         ];
     }
 }

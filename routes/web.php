@@ -15,5 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin','ProductsContrller@main');
+Route::get('admin','ProductsContrller@main')->middleware('auth');
 Route::post('createProducts','ProductsContrller@createProducts')->name('create');
+Route::post('update','ProductsContrller@updateProducts')->name('update');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

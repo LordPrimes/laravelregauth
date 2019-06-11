@@ -6,9 +6,9 @@ interface ProductsInterface
 {
     public function show(): object;
 
-    public function create(array $data): array; 
+    public function create(array $data); 
 
-    public function update(array $data);
+    public function update($data);
 
     public function delet($id);
 

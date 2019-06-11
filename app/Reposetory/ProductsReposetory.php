@@ -20,14 +20,14 @@ class ProductsReposetory implements ProductsInterface
         return $this->model->all();
     }
 
-    public function create(array $data): array
+    public function create(array $data)
     {
         return $this->model->create($data);
     }
 
-    public function update(array $data)
+    public function update($data)
     {
-        return $this->model->updated($data);
+        return $this->model->where('id', $data)->update($data);
     }
 
     public function delet($id)
